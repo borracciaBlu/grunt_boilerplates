@@ -38,21 +38,21 @@ grunt_project
 
 ```
 
-#### [app/]
+#### app/
 
 Contains the files You are editing and working on.
 
-#### [dist/]
+#### dist/
 
 This is where the generated files are stored once Grunt runs.
 
-#### [Gruntfile.js]
+#### Gruntfile.js
 
 Contains all automated tasks using Grunt.
 
 > Check [gruntjs.com](http://gruntjs.com) if you haven't heard about this project yet.
 
-#### [package.json]
+#### package.json
 
 Specify all dependencies loaded via Node.JS.
 

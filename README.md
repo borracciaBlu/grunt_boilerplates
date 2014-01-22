@@ -3,7 +3,7 @@ grunt_boilerplates
 
 Grunt boilerplates for less, javascript, img resize, watch
 
-Foreach bolerplate just clone it and just type:
+Foreach boilerplate just clone it and type:
 ```
 npm install
 ```

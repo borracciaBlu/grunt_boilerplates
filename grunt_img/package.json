@@ -1,0 +1,14 @@
+{
+  "name": "img_grunt",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.html",
+  "author": "marco.buttini@gmail.com",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-img": "~0.1.7"
+  },
+  "dependencies": {
+    "jpegtran-bin": "~0.2.3"
+  }
+}

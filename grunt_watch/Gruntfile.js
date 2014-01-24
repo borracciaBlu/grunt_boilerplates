@@ -3,6 +3,17 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        less : {
+            development : {
+                options: {
+                    paths: ["dist/css"],
+                    cleancss: true
+                },
+                files: {
+                    "dist/css/styles.css": "app/less/main.less"
+                } 
+            }
+        },
         jshint: {
             all: ['Gruntfile.js', 'app/lib/**/*.js', 'app/**/*.js'],
             afterconcat: ['app/tmp/<%= pkg.name %>.js']
@@ -48,6 +59,13 @@ module.exports = function(grunt) {
                     debounceDelay: 250,
                 }
             },
+            less: {
+                files: 'app/less/*.less',
+                tasks: ['less'],
+                options: {
+                  debounceDelay: 250,
+                },
+            },
             dist: {
                 files: ['dist/*'],
                 options: {
@@ -58,6 +76,7 @@ module.exports = function(grunt) {
     });
  
     //load the packages
+    grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-remove-logging');
@@ -67,6 +86,7 @@ module.exports = function(grunt) {
     //register the task
     grunt.registerTask('js', ['jshint:all']);
     grunt.registerTask('default', [
+        'less',
         'concat',
         'jshint:afterconcat',
         'removelogging',
